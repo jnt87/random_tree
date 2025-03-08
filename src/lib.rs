@@ -1,4 +1,4 @@
-use rand::{Rng, SeedableRng};
+use rand::Rng;
 use rand_chacha::ChaChaRng;
 use std::fs::{create_dir_all, File};
 use std::io::Write;
@@ -25,7 +25,7 @@ pub fn create_random_tree(base: &PathBuf, rng: &mut ChaChaRng, depth: usize) {
         let file_path = base.join(&file_name);
         let mut file = File::create(&file_path).expect("Failed to create file");
 
-        let content = format!("Random content {}\n", rng.gen::<u32>());
+        let content = format!("Random content {}\n", rng.random::<u32>());
         file.write_all(content.as_bytes()).expect("Failed to write to file");
     }
 

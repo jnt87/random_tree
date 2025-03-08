@@ -1,7 +1,5 @@
-use rand::{Rng, SeedableRng};
+use rand::SeedableRng;
 use rand_chacha::ChaChaRng;
-use std::fs::{create_dir_all, File};
-use std::io::Write;
 use std::path::PathBuf;
 use random_tree::{create_random_tree};
 
